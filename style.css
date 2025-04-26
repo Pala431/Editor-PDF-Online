@@ -1,0 +1,268 @@
+/* ===== VARIABLES ===== */
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4361ee;;
+  --dark-color: #2b2d42;
+  --light-color: #f5f7fa;
+  --border-radius: 10px;
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body.light-mode {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+/* ===== HEADER ===== */
+.toolbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo-text span:first-child { /* "PDF" */
+  color: #4361ee;
+}
+
+.logo-text span:last-child { /* "Online" */
+  color: #4cc9f0;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
+.logo-text h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.logo-text span {
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+/* ===== BOTONES HEADER ===== */
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-primary.btn-accent {
+  background: var(--accent-color);
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--dark-color);
+}
+
+/* ===== FORMAT TOOLS ===== */
+.format-tools {
+  background: #ffffff;
+  padding: 15px 25px;
+  border-radius: var(--border-radius);
+  margin: 15px auto;
+  width: 95%;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 80px;
+  z-index: 90;
+  border: 1px solid #eaeaea;
+}
+
+.tools-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tools-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 15px;
+  border-right: 1px solid #eee;
+}
+
+.format-btn {
+  background: #f5f7fa;
+  color: var(--dark-color);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.format-btn:hover {
+  background: #e0e7ff;
+  transform: translateY(-1px);
+}
+
+.select-enhanced {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 0.9rem;
+  min-width: 120px;
+}
+
+.alignment-tools {
+  display: flex;
+  gap: 5px;
+  padding-right: 15px;
+  border-right: 1px solid #eee;
+}
+
+/* ===== BOTONES FORMAT ===== */
+.format-btn, .page-btn {
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ===== DOCUMENTO ===== */
+.pdf-viewer {
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.document-page {
+  background: white;
+  width: 800px;
+  min-height: 1120px;
+  margin-bottom: 40px;
+  padding: 40px;
+  box-shadow: var(--box-shadow);
+  border-radius: 6px;
+  outline: none;
+}
+
+/* ===== DARK MODE EXTRAS ===== */
+body.dark-mode .toolbar,
+body.dark-mode .format-tools {
+  background: #2c2c2c;
+}
+
+body.dark-mode .document-page {
+  background: #ffffff; /* Hoja sigue blanca */
+  color: #000000; /* Texto negro en la hoja */
+}
+
+body.dark-mode .btn-primary,
+body.dark-mode .format-btn,
+body.dark-mode .page-btn {
+  background: var(--accent-color);
+  color: white;
+}
+
+body.dark-mode .btn-icon {
+  color: #ffffff;
+}
+
+/* Mejorar selects en oscuro */
+body.dark-mode select {
+  background: #333;
+  color: white;
+  border: none;
+}
+
+/* Mejorar input color en oscuro */
+body.dark-mode input[type="color"] {
+  background: #333;
+  border: none;
+}
+
+.alignment-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+body.dark-mode .format-tools {
+  background: #2c2c2c;
+  border-color: #444;
+}
+
+body.dark-mode .tools-group,
+body.dark-mode .alignment-tools {
+  border-right-color: #444;
+}
+
+body.dark-mode .format-btn {
+  background: #3a3a3a;
+  color: #eee;
+}
+
+body.dark-mode .format-btn:hover {
+  background: #4a4a4a;
+}

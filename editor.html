@@ -1,0 +1,92 @@
+<!-- editor.html actualizado -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor PDF Online</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+  <div class="editor-container">
+
+    <!-- HEADER -->
+    <header class="toolbar">
+      <div class="header-content">
+        <div class="logo-container">
+          <i class="fas fa-file-pdf logo-icon"></i>
+          <div class="logo-text">
+            <h1>PDF<span>Editor</span><span>Online</span></h1>
+            <p class="tagline">Editor Online Gratuito</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="dark-mode-toggle" class="btn-icon" title="Modo oscuro/claro">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="download-pdf" class="btn-primary btn-large btn-accent">
+            <i class="fas fa-download"></i> Exportar
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- BARRA DE HERRAMIENTAS -->
+    <div class="format-tools">
+      <div class="tools-section">
+        <div class="tools-group">
+          <button class="format-btn btn-text" data-command="bold"><i class="fas fa-bold"></i></button>
+          <button class="format-btn btn-text" data-command="italic"><i class="fas fa-italic"></i></button>
+          <button class="format-btn btn-text" data-command="underline"><i class="fas fa-underline"></i></button>
+        </div>
+
+        <select id="font-family" class="select-enhanced">
+          <option value="Arial">Arial</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Courier New">Courier New</option>
+        </select>
+
+        <select id="font-size" class="select-enhanced">
+          <option value="12px">12px</option>
+          <option value="14px">14px</option>
+          <option value="16px" selected>16px</option>
+          <option value="20px">20px</option>
+          <option value="24px">24px</option>
+        </select>
+
+        <div class="alignment-tools">
+          <button class="format-btn align-btn" data-align="left"><i class="fas fa-align-left"></i></button>
+          <button class="format-btn align-btn" data-align="center"><i class="fas fa-align-center"></i></button>
+          <button class="format-btn align-btn" data-align="right"><i class="fas fa-align-right"></i></button>
+          <button class="format-btn align-btn" data-align="justify"><i class="fas fa-align-justify"></i></button>
+        </div>
+
+        <button class="format-btn btn-text" id="insert-image-btn">
+          <i class="fas fa-image"></i> Imagen
+        </button>
+
+        <input type="file" id="image-upload" accept="image/*" style="display: none;">
+
+        <label class="format-btn btn-text" id="text-color-btn">
+          <i class="fas fa-palette"></i> Color
+          <input type="color" id="text-color" value="#000000" style="margin-left: 5px;">
+        </label>
+
+        <button class="page-btn" id="add-page">
+          <i class="fas fa-plus"></i> Nueva página
+        </button>
+      </div>
+    </div>
+
+    <!-- DOCUMENTO -->
+    <div class="pdf-viewer" id="pdf-viewer">
+      <div class="document-page" contenteditable="true">
+        ¡Escribe aquí tu documento!
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
